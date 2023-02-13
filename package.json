@@ -4,7 +4,7 @@
   "description": "Bosta backend assessment.",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix ./*.js ./components"
   },
@@ -19,10 +19,13 @@
   },
   "homepage": "https://github.com/xOmarSaeed/be-assessment#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "config": "^3.3.9",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.9.1"
+    "joi": "^17.7.1",
+    "mongoose": "^6.9.1",
+    "nanoid": "^4.0.1"
   },
   "devDependencies": {
     "eslint": "^8.34.0",
