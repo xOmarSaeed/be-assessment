@@ -11,6 +11,16 @@ const createToken = (payload) => {
   }
 };
 
+const decodeToken = (token) => {
+  try {
+    const decodedToken = jwt.verify(token, config.get('jwt.secret'));
+    return decodedToken;
+  } catch (err) {
+    throw new ErrorHandler(err, 401);
+  }
+};
+
 module.exports = {
   createToken,
+  decodeToken,
 };
