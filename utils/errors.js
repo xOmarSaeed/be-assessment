@@ -3,7 +3,9 @@ module.exports = {
   NOT_AUTHENTICATED: "You're not authenticated.",
   NOT_AUTHORIZED: "You're not authorized.",
   INVALID_TOKEN: 'Token is invalid.',
-  ALREADY_EXIST: 'Resource already exists',
+  ALREADY_EXIST: 'User already exists',
   NOT_VERIFIED: 'Your account has not been verified yet, please check your email',
   NOT_FOUND: 'Resource is not found',
+  ALREADY_VERIFIED: 'User is already verified.',
+  EXPIRED_CODE: 'Code has expired.',
 };

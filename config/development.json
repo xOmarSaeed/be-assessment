@@ -4,5 +4,17 @@
   },
   "database": {
     "uri": "mongodb://127.0.0.1:27017/Bosta"
+  },
+  "bcrypt": {
+    "saltRounds": 10
+  },
+  "mail": {
+    "service": "gmail",
+    "username": "omar.ahmed.saeed.1999@gmail.com",
+    "password": "zkrwednxnqbbmxbj"
+  },
+  "jwt": {
+    "secret": "OMAR_ENCRYPT_JWI_SECRET",
+    "expiresIn": "24h"
   }
 }

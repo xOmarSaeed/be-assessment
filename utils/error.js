@@ -1,8 +1,8 @@
 const respondWith = require('./response');
 
 class ErrorHandler extends Error {
-  constructor(name, message, statusCode) {
-    super(name, message);
+  constructor(message, statusCode) {
+    super(message);
     this.statusCode = statusCode;
   }
 }

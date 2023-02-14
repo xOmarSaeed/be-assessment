@@ -16,7 +16,7 @@ const validateSchema = (schema, property, abortEarly = false) => {
     } else {
       const { details } = error;
       const errors = details.map((detail) => detail.message);
-      const err = new ErrorHandler('Validation Error', 400, errors);
+      const err = new ErrorHandler(errors, 400);
       next(err);
     }
   };
