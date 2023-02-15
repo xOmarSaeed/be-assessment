@@ -22,6 +22,17 @@ const getCheck = async (req, res, next) => {
   }
 };
 
+const getAllChecks = async (req, res, next) => {
+  try {
+    const { userId } = req.requester;
+    const { areGrouped } = req.body;
+    const checks = await checksServices.getAllChecks(userId, areGrouped);
+    return respondWith(200, checks, 'Here are all the checks you made.', true, res);
+  } catch (err) {
+    next(err);
+  }
+};
+
 const createCheck = async (req, res, next) => {
   try {
     const checkInfo = req.body;
@@ -78,6 +89,7 @@ const deleteCheck = async (req, res, next) => {
 
 module.exports = {
   getCheck,
+  getAllChecks,
   createCheck,
   updateCheck,
   deleteCheck,

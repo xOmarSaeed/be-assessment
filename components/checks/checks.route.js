@@ -15,6 +15,14 @@ router.get(
   checksController.getCheck
 );
 
+router.get(
+  '/all',
+  isAuth,
+  granted(['User']),
+  validateSchema(checksSchema.getAllChecks, 'body'),
+  checksController.getAllChecks
+);
+
 router.post(
   '/',
   isAuth,

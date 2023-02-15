@@ -13,4 +13,12 @@ router.get(
   validateSchema(reportsSchema.getReport, 'body'),
   reportsController.getReport
 );
+
+router.get(
+  '/getByTag',
+  isAuth,
+  granted(['User']),
+  validateSchema(reportsSchema.getReportsByTag, 'body'),
+  reportsController.getReportsByTag
+);
 module.exports = router;

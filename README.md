@@ -4,18 +4,18 @@ Build an uptime monitoring RESTful API server that allows authenticated users to
 
 ## Overview
 
-- Signup with email verification. ✅
-- CRUD operations for URL checks (`GET`, `PUT` and `DELETE` can be called only by the user user who created the check).✅
+- Signup with email verification ✅.
+- CRUD operations for URL checks (`GET`, `PUT` and `DELETE` can be called only by the user user who created the check) ✅.
 - Authenticated users can receive a notification whenever one of their URLs goes down or up again:
   - Email.
   - Webhook _(optional)_.
-- Authenticated users can get detailed uptime reports about their URLs availability, average response time, and total uptime/downtime.✅
-- Authenticated users can group their checks by tags and get reports by tag.
+- Authenticated users can get detailed uptime reports about their URLs availability, average response time, and total uptime/downtime ✅.
+- Authenticated users can group their checks by tags and get reports by tag ✅.
 
 ## Acceptance Criteria
 
-- APIs should be consuming and producing `application/json`. ✅
-- Authenication should be stateless. ✅
+- APIs should be consuming and producing `application/json` ✅.
+- Authenication should be stateless ✅.
 - Each URL check may have the following options:✅
   - `name`: The name of the check.
   - `url`: The URL to be monitored.

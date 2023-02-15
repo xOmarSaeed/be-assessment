@@ -4,6 +4,13 @@ const getReport = async (checkId) => {
   const report = await reportsModel.findOne({ checkId });
   return report;
 };
+
+const getReports = async (checksIds) => {
+  // { quantity: { $in: [ 5, 15 ] } }
+  const reports = await reportsModel.find({ checkId: { $in: checksIds } });
+  return reports;
+};
+
 const createReport = async (reportInfo) => {
   const report = await reportsModel.create(reportInfo);
   return report;
@@ -14,4 +21,9 @@ const deleteReport = async (checkId) => {
   return deleteResult;
 };
 
-module.exports = { getReport, createReport, deleteReport };
+module.exports = {
+  getReport,
+  getReports,
+  createReport,
+  deleteReport,
+};

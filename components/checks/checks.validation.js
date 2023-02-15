@@ -1,5 +1,13 @@
 const Joi = require('joi');
 
+const accessCheck = Joi.object({
+  checkId: Joi.string().required(),
+});
+
+const getAllChecks = Joi.object({
+  areGrouped: Joi.boolean().required(),
+});
+
 const createCheck = Joi.object({
   name: Joi.string().required(),
   url: Joi.string().uri().required(),
@@ -44,12 +52,9 @@ const updateCheck = Joi.object({
   tags: Joi.array().items(Joi.string()).optional(),
 });
 
-const accessCheck = Joi.object({
-  checkId: Joi.string().required(),
-});
-
 module.exports = {
+  accessCheck,
+  getAllChecks,
   createCheck,
   updateCheck,
-  accessCheck,
 };

@@ -4,4 +4,8 @@ const getReport = Joi.object({
   checkId: Joi.string().required(),
 });
 
-module.exports = { getReport };
+const getReportsByTag = Joi.object({
+  tag: Joi.string().required(),
+});
+
+module.exports = { getReport, getReportsByTag };
