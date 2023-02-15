@@ -5,7 +5,7 @@ Build an uptime monitoring RESTful API server that allows authenticated users to
 ## Overview
 
 - Signup with email verification. ✅
-- CRUD operations for URL checks (`GET`, `PUT` and `DELETE` can be called only by the user user who created the check).
+- CRUD operations for URL checks (`GET`, `PUT` and `DELETE` can be called only by the user user who created the check).✅
 - Authenticated users can receive a notification whenever one of their URLs goes down or up again:
   - Email.
   - Webhook _(optional)_.
@@ -16,7 +16,7 @@ Build an uptime monitoring RESTful API server that allows authenticated users to
 
 - APIs should be consuming and producing `application/json`. ✅
 - Authenication should be stateless. ✅
-- Each URL check may have the following options:
+- Each URL check may have the following options:✅
   - `name`: The name of the check.
   - `url`: The URL to be monitored.
   - `protocol`: The resource protocol name `HTTP`, `HTTPS`, or `TCP`.

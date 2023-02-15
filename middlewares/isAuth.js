@@ -5,7 +5,6 @@ const errors = require('../utils/errors');
 const isAuth = (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
-    console.log(req.headers.authorization);
     if (!authHeader) {
       throw new ErrorHandler(errors.TOKEN_NOT_AUTHENTICATED, 401);
     } else {

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const checksSchema = new mongoose.Schema({
-  owner: {
+  createdBy: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'User',
     required: true,
@@ -22,7 +22,7 @@ const checksSchema = new mongoose.Schema({
   httpHeaders: { type: Object, default: null },
   assert: { type: Object, default: null },
   tags: { type: [String], default: [] },
-  ignoreSSL: { type: Boolean, default: false },
+  ignoreSSL: { type: Boolean },
 });
 
 const Checks = mongoose.model('Checks', checksSchema);

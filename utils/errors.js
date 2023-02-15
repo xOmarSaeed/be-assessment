@@ -8,4 +8,5 @@ module.exports = {
   NOT_FOUND: 'Resource is not found',
   ALREADY_VERIFIED: 'User is already verified.',
   EXPIRED_CODE: 'Code has expired.',
+  CHECK_ALREADY_EXIST: 'You have that URL already in check',
 };
