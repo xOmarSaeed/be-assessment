@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const checksSchema = new mongoose.Schema({
+const checkSchema = new mongoose.Schema({
   createdBy: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'User',
@@ -25,6 +25,6 @@ const checksSchema = new mongoose.Schema({
   ignoreSSL: { type: Boolean },
 });
 
-const Checks = mongoose.model('Checks', checksSchema);
+const Check = mongoose.model('Check', checkSchema);
 
-module.exports = Checks;
+module.exports = Check;

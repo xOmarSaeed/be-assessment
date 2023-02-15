@@ -2,15 +2,18 @@ const { ErrorHandler } = require('../../utils/error');
 const errors = require('../../utils/errors');
 const respondWith = require('../../utils/response');
 const checksServices = require('./checks.services');
+const reportsServices = require('../reports/reports.services');
 
 const getCheck = async (req, res, next) => {
   try {
     const { checkId } = req.body;
+    const { userId } = req.requester;
+
     const check = await checksServices.getCheck(checkId);
     if (!check) {
       throw new ErrorHandler(errors.NOT_FOUND, 403);
     }
-    if (check.createdBy.toString() !== req.requester.userId) {
+    if (check.createdBy.toString() !== userId) {
       throw new ErrorHandler(errors.NOT_AUTHORIZED, 401);
     }
     return respondWith(200, check, 'Here is the check you asked for.', true, res);
@@ -29,6 +32,7 @@ const createCheck = async (req, res, next) => {
 
     // eslint-disable-next-line max-len
     const check = await checksServices.createCheck({ ...checkInfo, createdBy: req.requester.userId });
+    await reportsServices.createReport({ checkId: check._id, status: 200, availability: 0 });
     // eslint-disable-next-line no-underscore-dangle
     return respondWith(201, {}, `Check No.: ${check._id} has been created successfully`, true, res);
   } catch (err) {
@@ -59,11 +63,12 @@ const deleteCheck = async (req, res, next) => {
     const { checkId } = req.body;
     const check = await checksServices.getCheck(checkId);
     if (!check) {
-      throw new ErrorHandler(erros.NOT_FOUND, 403);
+      throw new ErrorHandler(errors.NOT_FOUND, 403);
     }
     if (check.createdBy.toString() !== req.requester.userId) {
       throw new ErrorHandler(errors.NOT_AUTHORIZED, 401);
     }
+    await reportsServices.deleteReport(checkId);
     await checksServices.deleteCheck(checkId);
     return respondWith(200, {}, 'Your check has been deleted successfully', true, res);
   } catch (err) {

@@ -9,7 +9,7 @@ Build an uptime monitoring RESTful API server that allows authenticated users to
 - Authenticated users can receive a notification whenever one of their URLs goes down or up again:
   - Email.
   - Webhook _(optional)_.
-- Authenticated users can get detailed uptime reports about their URLs availability, average response time, and total uptime/downtime.
+- Authenticated users can get detailed uptime reports about their URLs availability, average response time, and total uptime/downtime.✅
 - Authenticated users can group their checks by tags and get reports by tag.
 
 ## Acceptance Criteria
@@ -34,7 +34,7 @@ Build an uptime monitoring RESTful API server that allows authenticated users to
     - `assert.statusCode`: An HTTP status code to be asserted.
   - `tags`: A list of the check tags (optional).
   - `ignoreSSL`: A flag to ignore broken/expired SSL certificates in case of using the HTTPS protocol.
-- Each report may have the following information:
+- Each report may have the following information:✅
   - `status`: The current status of the URL.
   - `availability`: A percentage of the URL availability.
   - `outages`: The total number of URL downtimes.
