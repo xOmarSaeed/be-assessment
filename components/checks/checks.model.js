@@ -18,8 +18,8 @@ const checkSchema = new mongoose.Schema({
   interval: { type: Number, default: 10 },
   // The threshold of failed requests that will create an alert
   threshold: { type: Number, default: 1 },
-  authentication: { type: Object, default: null },
-  httpHeaders: { type: Object, default: null },
+  authentication: { type: Object, default: {} },
+  httpHeaders: { type: Object, default: {} },
   assert: { type: Object, default: null },
   tags: { type: [String], default: [] },
   ignoreSSL: { type: Boolean },

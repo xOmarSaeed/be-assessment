@@ -6,7 +6,6 @@ const getReport = async (checkId) => {
 };
 
 const getReports = async (checksIds) => {
-  // { quantity: { $in: [ 5, 15 ] } }
   const reports = await reportsModel.find({ checkId: { $in: checksIds } });
   return reports;
 };

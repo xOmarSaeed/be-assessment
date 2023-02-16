@@ -3,6 +3,7 @@ const errors = require('../../utils/errors');
 const respondWith = require('../../utils/response');
 const checksServices = require('./checks.services');
 const reportsServices = require('../reports/reports.services');
+const { axiosURLCheck } = require('../../Services/axiosService');
 
 const getCheck = async (req, res, next) => {
   try {
@@ -44,6 +45,7 @@ const createCheck = async (req, res, next) => {
     // eslint-disable-next-line max-len
     const check = await checksServices.createCheck({ ...checkInfo, createdBy: req.requester.userId });
     await reportsServices.createReport({ checkId: check._id, status: 200, availability: 0 });
+    axiosURLCheck(check);
     // eslint-disable-next-line no-underscore-dangle
     return respondWith(201, {}, `Check No.: ${check._id} has been created successfully`, true, res);
   } catch (err) {
