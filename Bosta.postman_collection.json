@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "27b91820-e57c-4dc8-b397-d9ff1ce2dd95",
+		"name": "Bosta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21264850"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "userSignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "omarsaeedapps@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "omar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userSignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "omarsaeedapps@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "omar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userVerify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/api/users/verify?verificationCode=VAL51X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "verificationCode",
+									"value": "VAL51X"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checks",
+			"item": [
+				{
+					"name": "getCheck",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ViOGM0NGUyNTljNTRiMDNiOTI1NTgiLCJ1c2VyRW1haWwiOiJvbWFyc2FlZWRhcHBzQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjc2NDY5NTI3LCJleHAiOjE2NzY1NTU5Mjd9.c-138WvD1L30UtgvDYy7vTnthp3OH3DX75RK08w6Nf0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "checkId",
+									"value": "63ec012a58664e718269164d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/checks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"checks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCheck",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ViOGM0NGUyNTljNTRiMDNiOTI1NTgiLCJ1c2VyRW1haWwiOiJvbWFyc2FlZWRhcHBzQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjc2NTA0MjQ0LCJleHAiOjE2NzY1OTA2NDR9.o7_PVfsc08bg55MuUdHUJX343X_MtYiSvzrRn7xADRU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "testing axios",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://axios-http.com",
+									"type": "text"
+								},
+								{
+									"key": "protocol",
+									"value": "HTTPS",
+									"type": "text"
+								},
+								{
+									"key": "ignoreSSL",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "checkTags",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/checks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"checks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateChecks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ViOGM0NGUyNTljNTRiMDNiOTI1NTgiLCJ1c2VyRW1haWwiOiJvbWFyc2FlZWRhcHBzQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjc2NDY5NTI3LCJleHAiOjE2NzY1NTU5Mjd9.c-138WvD1L30UtgvDYy7vTnthp3OH3DX75RK08w6Nf0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "checkId",
+									"value": "63ec012a58664e718269164d",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Bosta back-end assessment",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://github.com/xOmarSaeed/be-assessment",
+									"type": "text"
+								},
+								{
+									"key": "protocol",
+									"value": "HTTPS",
+									"type": "text"
+								},
+								{
+									"key": "ignoreSSL",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/checks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"checks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCheck",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "checkId",
+									"value": "63ee45e565290cc5c524eab2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/checks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"checks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllChecks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ViOGM0NGUyNTljNTRiMDNiOTI1NTgiLCJ1c2VyRW1haWwiOiJvbWFyc2FlZWRhcHBzQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjc2NDY5NTI3LCJleHAiOjE2NzY1NTU5Mjd9.c-138WvD1L30UtgvDYy7vTnthp3OH3DX75RK08w6Nf0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "areGrouped",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/checks/all/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"checks",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "getReport",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ViOGM0NGUyNTljNTRiMDNiOTI1NTgiLCJ1c2VyRW1haWwiOiJvbWFyc2FlZWRhcHBzQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjc2NDY5NDY5LCJleHAiOjE2NzY1NTU4Njl9.9qDmtph5y03jb5Us8YXllCZ7rGh4rPO0r4vSvYK3aXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "checkId",
+									"value": "63ec012a58664e718269164d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reports/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reports",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReportsByTag",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ViOGM0NGUyNTljNTRiMDNiOTI1NTgiLCJ1c2VyRW1haWwiOiJvbWFyc2FlZWRhcHBzQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjc2NDY5NTI3LCJleHAiOjE2NzY1NTU5Mjd9.c-138WvD1L30UtgvDYy7vTnthp3OH3DX75RK08w6Nf0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "tag",
+									"value": "critical",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reports/getByTag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reports",
+								"getByTag"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "testRoute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{port}}/api/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "JWT Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ViOGM0NGUyNTljNTRiMDNiOTI1NTgiLCJ1c2VyRW1haWwiOiJvbWFyc2FlZWRhcHBzQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjc2NTA0MjQ0LCJleHAiOjE2NzY1OTA2NDR9.o7_PVfsc08bg55MuUdHUJX343X_MtYiSvzrRn7xADRU"
+		},
+		{
+			"key": "port",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
