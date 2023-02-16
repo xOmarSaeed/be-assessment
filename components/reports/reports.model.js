@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const reportSchema = new mongoose.Schema({
   checkId: { type: mongoose.SchemaTypes.ObjectId, ref: 'Check', required: true },
   status: {
-    type: String,
-    default: 'No status',
+    type: Number,
+    default: 0,
     required: true,
   },
   availability: {
@@ -20,7 +20,7 @@ const reportSchema = new mongoose.Schema({
   uptime: { type: Number, default: 0 },
   avgResponseTime: { type: Number, default: 0 },
   history: {
-    type: [String],
+    type: [Object],
     default: [],
   },
 });
